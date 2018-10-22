@@ -1,14 +1,23 @@
 import React from 'react';
+import house from '../img/property.jpg';
 
 export default function Tiles(props) {
-    var {address, airFilter, id} = props.property
+    var { address, propertyImg, airFilter, id } = props.property
     return (
         <div className="tile">
-                <p>Property Address:</p>
-                <p>{address}</p>
-                <br></br>
-                <p>Last Air Filter Change:</p>
-                <p>{airFilter}</p>
+            <div>
+                <img src={house} alt='property' width="210" />
+            </div>
+            <p style={{ fontWeight: "bold", margin: "0px" }}>Property Address:</p>
+            <p style={{margin: "0px"}}>{address}</p>
+            <p style={{ fontWeight: "bold", margin: "8px 0px 0px" }}>Last Air Filter Change:</p>
+            <p style={{margin: "0px"}}>{airFilter}</p>
+            <div
+                style={{
+                    position: "absolute",
+                    bottom: "10px",
+                    left: "8px"
+                }}>
                 <button
                     className="buttons"
                     onClick={() => props.filterChangeClick(id)}
@@ -16,7 +25,8 @@ export default function Tiles(props) {
                 <button
                     className="buttons"
                     onClick={() => props.deleteClick(id)}
-                >Remove Property</button>  
+                >Remove Property</button>
+            </div>
         </div>
     )
 }

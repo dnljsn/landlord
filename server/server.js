@@ -6,10 +6,12 @@ app.use(bodyParser.json())
 
 var propertiesDB = [{
     address: '839 E. 400 S. Provo, UT',
+    propertyImg: './img/property.jpg',
     airFilter: 'May 1, 2018',
     id: 1
 }, {
     address: '1050 W. 80 E. Lehi, UT',
+    propertyImg: "./img/property2.jpg",
     airFilter: 'April 28, 2018',
     id: 2
 }];
@@ -48,7 +50,7 @@ app.put('/api/property/:id', (req, res, ) => {
             propertiesDB[i].airFilter = month + " " + day + ", " + year;
         }
     }
-res.sendStatus(200);
+    res.sendStatus(200);
 })
 
 
